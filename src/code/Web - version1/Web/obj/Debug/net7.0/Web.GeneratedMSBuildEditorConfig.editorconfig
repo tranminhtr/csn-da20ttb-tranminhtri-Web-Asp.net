@@ -1,0 +1,73 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Web
+build_property.RootNamespace = Web
+build_property.ProjectDir = D:\Co_so_nganh\src\code\Web - version1\Web\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Co_so_nganh\src\code\Web - version1\Web
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/CTYBaoDuong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RZQmFvRHVvbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/CTYBaoHiem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RZQmFvSGllbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/CTYDangKiem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RZRGFuZ0tpZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/DanhMuc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFuaE11Yy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/GoiBaoDuong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR29pQmFvRHVvbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/HanBaoDuongXe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGFuQmFvRHVvbmdYZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/HanDangKiem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGFuRGFuZ0tpZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/HanMuaBaohiem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGFuTXVhQmFvaGllbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/Xeoto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcWGVvdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Co_so_nganh/src/code/Web - version1/Web/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

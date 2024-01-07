@@ -1,0 +1,139 @@
+﻿@page
+@model Web.Pages.HanDangKiemModel
+
+<h5>Hạn đăng kiểm</h5>
+@(
+Html.DevExtreme().DataGrid<Web.Models.Dangkiemxe>()
+.ID("gridContainer")
+ .ColumnHidingEnabled(true)
+.ShowBorders(true)
+.Scrolling(scrolling => scrolling.RowRenderingMode(GridRowRenderingMode.Virtual))
+.Selection(s => s.Mode(SelectionMode.Multiple))
+.ShowColumnLines(true)
+.ShowRowLines(true)
+.RowAlternationEnabled(true)
+.ShowBorders(true)
+.OnExporting("exporting")
+.Paging(paging => paging.PageSize(10))
+.Pager(pager =>
+{
+    pager.Visible(true);
+    pager.DisplayMode(GridPagerDisplayMode.Full);
+    pager.ShowPageSizeSelector(true);
+    pager.AllowedPageSizes(new JS("[5, 10, 'all']"));
+    pager.ShowInfo(true);
+    pager.ShowNavigationButtons(true);
+})
+.Editing(e => e.Mode(GridEditMode.Popup)
+.AllowUpdating(true)
+.AllowAdding(true)
+.AllowDeleting(true)
+.Popup(p => p
+.Title("Thêm/Sửa hạn đăng kiểm  ")
+.ShowTitle(true)
+
+)
+.Form(f => f.Items(items =>
+{
+    items.AddGroup()
+    .ColCount(2)
+    .ColSpan(2)
+    .Items(groupItems =>
+    {
+        groupItems.AddSimpleFor(m => m.Id);
+        groupItems.AddSimpleFor(m => m.BienSo);
+        groupItems.AddSimpleFor(m => m.MaCtydk);
+        groupItems.AddSimpleFor(m => m.NgayBatDau);
+        groupItems.AddSimpleFor(m => m.NgayKetThuc);
+        groupItems.AddSimpleFor(m => m.Gia);
+        groupItems.AddSimpleFor(m => m.DemNgay);
+        groupItems.AddSimpleFor(m => m.TrangThai);
+       
+    });
+}))
+)
+.Columns(columns =>
+{
+
+    columns.AddFor(m => m.Id).Caption("ID");
+
+    columns.AddFor(m => m.BienSo).Caption("Biển số").Lookup(lookup => lookup
+    .DataSource(d => d.Mvc().Controller("Xes").LoadAction("Get").Key("BienSo"))
+    .DisplayExpr("BienSo")
+    .ValueExpr("BienSo"));
+
+    columns.AddFor(m => m.MaCtydk).Caption("Tên CTY đăng kiem").Lookup(lookup => lookup
+    .DataSource(d => d.Mvc().Controller("Ctydangkiems").LoadAction("Get").Key("MaCtydk"))
+    .DisplayExpr("TenCty")
+    .ValueExpr("MaCtydk"));
+
+    columns.AddFor(m => m.NgayBatDau).Caption("Ngày bắt đầu");
+
+    columns.AddFor(m => m.NgayKetThuc).Caption("Ngày kết thúc");
+
+    columns.AddFor(m => m.Gia).Caption("Giá");
+    columns.AddFor(m => m.DemNgay).Caption("Đếm ngày");
+
+    columns.AddFor(m => m.TrangThai).Caption("Trang thai")
+    .Lookup(lookup => lookup
+    .DataSource(d => d.Mvc().Controller("Danhmucs").LoadAction("Get").Key("Id"))
+    .DataSourceOptions(d => d.Filter("[ ['MaLoai','=', 5] ]"))
+    .DisplayExpr("TenDm")
+    .ValueExpr("Id"));
+  
+})
+.OnExporting("exporting")
+    .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+ .DataSource(ds => ds.Mvc()
+        .Controller("Dangkiemxes")
+        .LoadAction("Get")
+        .InsertAction("Post")
+        .UpdateAction("Put")
+        .DeleteAction("Delete")
+        .Key("Id")
+    ).HeaderFilter(hf => hf.Visible(true))
+    .Grouping(grouping => grouping.AutoExpandAll(true))
+                            .GroupPanel(groupPanel => groupPanel.Visible(true))
+.Pager(pager =>
+{
+    pager.Visible(true);
+    pager.DisplayMode(GridPagerDisplayMode.Full);
+    pager.ShowPageSizeSelector(true);
+    pager.AllowedPageSizes(new JS("[5, 10, 'all']"));
+    pager.ShowInfo(true);
+    pager.ShowNavigationButtons(true);
+})
+
+
+.FilterRow(filterRow => filterRow
+.Visible(true)
+.ApplyFilter(GridApplyFilterMode.Auto)
+)
+
+
+.ColumnChooser(c => c.Enabled(true))
+
+
+.ColumnFixing(c => c.Enabled(true))
+
+
+.AllowColumnResizing(true)
+.ColumnMinWidth(50)
+.ColumnAutoWidth(true)
+)@*Xuất excel*@
+<script>
+    function exporting(e) {
+        var workbook = new ExcelJS.Workbook();
+        var worksheet = workbook.addWorksheet('HanBaoDuong');
+
+        DevExpress.excelExporter.exportDataGrid({
+            component: e.component,
+            worksheet: worksheet,
+            autoFilterEnabled: true
+        }).then(function () {
+            workbook.xlsx.writeBuffer().then(function (buffer) {
+                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'HanBaoDuong.xlsx');
+            });
+        });
+    }
+</script>

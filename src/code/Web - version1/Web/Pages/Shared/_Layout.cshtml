@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>QUẢN LÝ XE Ô TÔ</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+     <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    @* Uncomment to use the HtmlEditor control *@
+    @* <script src="https://unpkg.com/devextreme-quill@23_2/dist/dx-quill.min.js"></script> *@
+
+    @* Uncomment to use the Gantt control *@
+    @*<link href="~/css/devextreme/dx-gantt.css" rel="stylesheet" />*@
+
+    @* Uncomment to use the Diagram control *@
+    @*<link href="~/css/devextreme/dx-diagram.css" rel="stylesheet" />*@
+
+    <link href="~/css/devextreme/bootstrap.css" rel="stylesheet" />
+
+    @* Predefined themes: https://js.devexpress.com/DevExtreme/Guide/Themes_and_Styles/Predefined_Themes/ *@
+    <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/css/Site.css" />
+
+    @* Uncomment to use the Gantt control *@
+    @*<script src="~/js/devextreme/dx-gantt.js"></script>*@
+
+    @* Uncomment to use the Diagram control *@
+    @*<script src="~/js/devextreme/dx-diagram.js"></script>*@
+     <!-- Thêm Bootstrap JS và Popper.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.10.1/polyfill.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <script src="~/js/devextreme/jquery.js"></script>
+    <script src="~/js/devextreme/bootstrap.js"></script>
+
+    @* Uncomment to use Globalize for localization *@
+    @* Docs: https://docs.devexpress.com/AspNetCore/400577#globalize *@
+    @*<script src="~/js/devextreme/cldr.js"></script>*@
+    @*<script src="~/js/devextreme/cldr/event.js"></script>*@
+    @*<script src="~/js/devextreme/cldr/supplemental.js"></script>*@
+    @*<script src="~/js/devextreme/cldr/unresolved.js"></script>*@
+    @*<script src="~/js/devextreme/globalize.js"></script>*@
+    @*<script src="~/js/devextreme/globalize/message.js"></script>*@
+    @*<script src="~/js/devextreme/globalize/number.js"></script>*@
+    @*<script src="~/js/devextreme/globalize/currency.js"></script>*@
+    @*<script src="~/js/devextreme/globalize/date.js"></script>*@
+
+    @* Uncomment to enable client-side export *@
+    @*<script src="~/js/devextreme/jszip.js"></script>*@
+
+    <script src="~/js/devextreme/dx.all.js"></script>
+
+    @* Uncomment to provide geo-data for the VectorMap control *@
+    @* Docs: https://js.devexpress.com/DevExtreme/Guide/Widgets/VectorMap/Providing_Data/#Data_for_Areas *@
+    @*<script src="~/js/devextreme/vectormap-data/world.js"></script>*@
+
+    <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
+    <script src="~/js/devextreme/aspnet/dx.aspnet.data.js"></script>
+    <style>
+        .navbar-brand img {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body style="padding-top: 5rem;">
+
+    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+        <div class="container-fluid">
+           <a class="navbar-brand" href="/Index">
+                <img src="~/img/logo.jpg" alt="Logo">
+            </a>
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a href="/Index" class="nav-link active">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Bảo hiểm xe
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="CTYBaoHiem">CTY Bảo hiểm</a></li>
+                            <li><a class="dropdown-item" href="HanMuaBaohiem">Hạn mua bảo hiểm xe</a></li>
+                        </ul>
+                    </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Đăng kiểm xe
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="CTYDangKiem">CTY Đăng kiểm</a></li>
+                            <li><a class="dropdown-item" href="HanDangKiem">Hạn đăng kiểm xe</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                           Bảo dưỡng xe
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="CTYBaoDuong">CTY Bảo dưỡng</a></li>
+                            <li><a class="dropdown-item" href="GoiBaoDuong">Gói bảo dưỡng xe</a></li>
+                            <li><a class="dropdown-item" href="HanBaoDuongXe">Hạn bảo dưỡng xe</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="Xeoto" class="nav-link">Xe ô tô</a></li>
+                    <li class="nav-item"><a href="DanhMuc" class="nav-link">Danh mục</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+   
+</body>
+
+</html>
